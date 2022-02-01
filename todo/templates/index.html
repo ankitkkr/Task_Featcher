@@ -1,0 +1,171 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+
+<!-- <h1> This is Home Page</h1> -->
+
+
+<!-- carousel start -->
+
+
+<!-- TODO start -->
+
+<div class="container">
+	<div class="mycard">
+		<div class="row">
+			<div class="col-md-6">
+					<div class="myleftctn">
+							<form class="myform text-center"method="post" action="/add-todo/">
+									<header> ADD NEW TASK</header>
+					        {% csrf_token %}
+					        <div class="forminput">
+						        <div class="formtitle">
+						        	<div class="myinput">
+						        		<h5>TITLE</h5>
+						        		{{ form.title}}
+						        	</div>
+						        </div>
+						        <br>
+						        <div class="formstatus">
+						        	<div class="myinput">
+						        	<h5>STATUS</h5>
+
+						        		{{ form.status}}
+						        	</div>
+						        </div>
+						        <br>						        
+						        <div class="formpriority">
+						        	<div class="myinput">
+						        	<h5>PRIORITY</h5>
+
+						        		{{ form.priority}}
+						        	</div>
+						        </div>
+					      	</div>
+					        <hr>
+				      		<input class="but" type="submit" name="submit" value="ADD">
+				      </form>
+						</div>
+				</div>
+				<div class="col-md-6">
+					<div class="myrightctn">
+						<div class="box">
+							<header>Task Fetcher!</header>
+							<p>
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+								tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+								<br>
+								<input type="button" class="butt_out" name="Know_more" value="Learn More"/>
+							</p>
+						</div>
+					</div>
+
+
+				</div>
+
+
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+</div>
+
+
+<div class="row p-4 ">
+	<div class="col-lg-10">
+		<div class="border">
+		
+			{% if todos|length == 0 %}
+
+
+			<div class="empty p-4">
+				<br>
+				<br>
+				<div class="alert">
+				<p class="emptyheader" style="font-size: 30px;"> NO TODOs</p>
+				</div>
+				<br>
+				<br>
+
+			</div>
+
+
+			{% else %}
+			<div>
+				<table class="table">
+					<thead class="thead">
+						<tr>
+							<th>#</th>
+							<th>Title</th>
+							<th>Status</th>
+							<th>Priority</th>
+							<th>Delete 🗑️</th>
+							<th>Actions</th>
+						</tr>
+					</thead>
+					<tbody>
+						{% for todo in todos %}
+							<tr>
+							<td>{{forloop.counter}}</td>
+							<td>{{todo.title}}</td>
+							<td>{% if todo.status == 'C' %}
+									<p>✅</p>
+								{% else %}
+									<p>⏳</p>
+								{% endif %}
+
+							</td>
+							<td>{{todo.priority}}</td>
+							<td><a href="/delete-todo/{{todo.id}}" title= 'Delete'class="btn btn-danger">delete</a></td>
+
+							<td>
+							{% if todo.status == 'C' %}
+							<a href="/change-todo/{{todo.id}}/P" title="MarkPending">⏳</a>
+							{% else %}
+							<a href="/change-todo/{{todo.id}}/C" title="MarkCompleted">✅</a></td>
+							{% endif %}
+
+
+
+							</tr>
+									
+
+						{% endfor %}
+
+					</tbody>
+				</table>
+			</div>
+			{% endif %}
+
+		</div>
+	</div>
+
+	<div class="col">
+	<!-- 	<div class="border"> -->
+		
+		<div class="card" >
+	  <div class="card-body">
+	    <h5 class="card-title text-center">History!!</h5>
+	    <p class="card-text">COMMING SOON....</p>
+	    <p class="card-text">COMMING SOON....</p>
+	    <p class="card-text">COMMING SOON....</p>
+	    <p class="card-text">COMMING SOON....</p>
+
+	    <a href="#" class="btn btn-primary">Clear</a>
+	  </div>
+		</div>
+	</div>
+
+	
+</div>
+
+
+
+
+
+{% endblock %}

@@ -1,0 +1,148 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body{
+	background: #fbf3ff;
+
+}
+
+.container{
+	max-width: 800px;
+	height: 400px;
+	padding-top: 20px;
+}
+
+.myrightctn{
+	position: relative;
+	background-image: linear-gradient(45deg,#6EE2F5,#6454F0);
+	border-radius: 15px;
+	height: 100%;
+	padding: 25px;
+	color: rgb 192,192,192;
+	font-size: 12px;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+
+.myleftctn{
+	position: relative;
+	background: #fff;
+	border-radius: 15px;
+	height: 100%;
+	padding: 25px;
+	padding-left: 50px;
+}
+
+.myleftctn header{
+	color: #3499FF;
+	font-size: 30px;
+	font-weight: 700;
+	margin-bottom: 20px;
+}
+
+.row{
+	height: 100%;
+}
+
+.mycard{
+	position: relative;
+	background: #fff;
+	height: 100%;
+	border-radius: 15%;
+/*	-webkit-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.3);
+	-moz-box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.3);
+	box-shadow: 0px 10px 40px -10px rgba(0,0,0,0.3);*/
+}
+
+.myrightctn header{
+	color: #fff;
+	font-size: 44px;
+	font-family: 'Kaushan Script', cursive;
+
+}
+
+.box{
+	position: relative;
+	margin: 20px;
+	margin-bottom: 100px;
+}
+
+.myleftctn .myinput{
+	padding: 10px;
+	padding-left: 10px;
+	border: none;
+	display: flex;
+	justify-content: left;
+	align-items: left;
+
+}
+
+h5{
+	margin: 3px;
+	padding-right: 8px;
+}
+
+.myleftctn .but{
+	background: linear-gradient(45deg, #6EE2F5,#6454F0);
+	color: #fff;
+	width: 230px;
+	border: none;
+	border-radius: 25px;
+	padding: 10px;
+}
+
+.butt_out{
+	margin-top: 20px;
+	background: transparent;
+	border-radius: 25px;
+	color: #fff;
+	width: 120px;
+	border: 2px solid #fff;
+	padding: 10px;
+	
+}
+
+.butt_out:hover{
+	box-shadow: 0px 10px 49px -14px rgba(0,0,0,0.9);
+}
+
+
+
+.emptyheader{
+	color: #fff;
+	font-size: 44px;
+	/*padding-top: 10px;*/
+	margin: 10px;
+}
+
+.alert{
+	position: relative;
+	background: linear-gradient(45deg,#6EE2F5,#6454F0);
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+
+
+
+.relative{
+	position: relative;
+}
+
+.table{
+	position: relative;
+	background-color: transparent ;
+}
+
+.thead{
+	background-color: #3499FF;
+}
